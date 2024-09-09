@@ -18,7 +18,6 @@ class Owner(db.Model):
     def __repr__(self):
         return f'<Pet Owner {self.name}>'
     
-
 class Pet(db.Model):
     __tablename__ = 'pets'
 
@@ -26,7 +25,7 @@ class Pet(db.Model):
     name = db.Column(db.String)
     species = db.Column(db.String)
 
-    owner_id = db.Column(db.integer, db.ForeignKey('owners.id'))
+    owner_id = db.Column(db.Integer, db.ForeignKey('owners.id'))
 
     def __repr__(self):
         return f'<Pet {self.name}, {self.species}>'
